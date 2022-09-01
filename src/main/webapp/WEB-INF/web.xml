@@ -1,0 +1,20 @@
+<web-app>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>JDBC REALM</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <realm-name>JDBCRealm</realm-name>
+    <form-login-config>
+      <form-login-page>/secure/login.html</form-login-page>
+      <form-error-page>/secure/err.html</form-error-page>
+    </form-login-config>
+  </login-config>
+</web-app>

@@ -1,0 +1,50 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="MultiPlayerLudo:war exploded">
+    <output-path>$PROJECT_DIR$/target/MultiPlayerLudo</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>MultiPlayerLudo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="MultiPlayerLudo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.jboss.errai:errai-javax-enterprise:4.15.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.errai:errai-codegen:4.15.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.errai:errai-common:4.15.0.Final" />
+          <element id="library" level="project" name="Maven: com.google.jsinterop:jsinterop-annotations:2.0.0" />
+          <element id="library" level="project" name="Maven: org.jboss.errai.reflections:reflections:4.15.0.Final" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:30.1-jre" />
+          <element id="library" level="project" name="Maven: com.google.guava:failureaccess:1.0.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" />
+          <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:3.0.2" />
+          <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
+          <element id="library" level="project" name="Maven: com.google.errorprone:error_prone_annotations:2.3.4" />
+          <element id="library" level="project" name="Maven: com.google.j2objc:j2objc-annotations:1.3" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.23.2-GA" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.26" />
+          <element id="library" level="project" name="Maven: de.benediktmeurer.gwt-slf4j:gwt-slf4j:0.0.2" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.8.1" />
+          <element id="library" level="project" name="Maven: com.google.elemental2:elemental2-dom:1.1.0" />
+          <element id="library" level="project" name="Maven: com.google.jsinterop:base:1.0.0" />
+          <element id="library" level="project" name="Maven: com.google.elemental2:elemental2-core:1.1.0" />
+          <element id="library" level="project" name="Maven: com.google.elemental2:elemental2-promise:1.1.0" />
+          <element id="library" level="project" name="Maven: org.mvel:mvel2:2.4.8.Final" />
+          <element id="library" level="project" name="Maven: junit:junit:4.13.1" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: com.github.cliftonlabs:json-simple:2.3.0" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/MultiPlayerLudo/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="MultiPlayerLudo/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,216 @@
+.board{
+    width: fit-content;
+    border: 10px solid #11262e;
+    border-radius: 5px;
+    margin: 10px auto;
+    position: fixed;
+    top: 50px;
+    left:460px;
+}
+.player1{
+    width: 250px;
+    height: 200px;
+    border: 5px solid #d44044;
+    border-radius: 5px;
+    border-style:dashed;
+    margin: 10px auto;
+    position: fixed;
+    top: 50px;
+    left: 100px;
+}
+.player2{
+    width: 250px;
+    height: 200px;
+    border: 5px solid #4b73e2;
+    border-radius: 5px;
+    border-style:dashed;
+    margin: 10px auto;
+    position: fixed;
+    top: 480px;
+    left: 100px;
+
+}
+.player3{
+    width: 250px;
+    height: 200px;
+    border: 5px solid #3d8119;
+    border-radius: 5px;
+    border-style:dashed;
+    margin: 10px auto;
+    position: fixed;
+    top: 50px;
+    left: 1200px;
+
+}
+.player4{
+    width: 250px;
+    height: 200px;
+    border: 5px solid #d5d500;
+    border-radius: 10px;
+    border-style:dashed;
+    margin: 10px auto;
+    position: fixed;
+    top: 480px;
+    left: 1200px;
+
+}
+p2{
+    background-color: #329932;
+}
+.fa-chess-pawn{
+    position: relative;
+    left: 15px;
+    top: 10px;;
+}
+.row{
+    display: flex;
+}
+.box{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.red-section{
+    background-color: #d44044;
+    width: 250px; /* 600/15*6 */
+    height: 250px;
+}
+
+.green-section{
+    background-color: #3d8119;
+    width: 250px; /* 600/15*6 */
+    height: 250px;
+}
+
+.blue-section{
+    background-color: #4b73e2;
+    width: 250px; /* 600/15*6 */
+    height: 250px;
+}
+
+.yellow-section{
+    background-color: #d5d500;
+    width: 250px; /* 600/15*6 */
+    height: 250px;
+}
+
+.winning-section{
+    border-top: 63px solid #3d8119;
+    border-left: 63px solid #d44044;
+    border-right: 63px solid #d5d500;
+    border-bottom: 63px solid #4b73e2;
+}
+
+.red{ background-color: #d44044; }
+.green{ background-color: #3d8119; }
+.blue{ background-color: #4b73e2; }
+.yellow{ background-color: #d5d500; }
+.black-border{ border: 1px solid black; }
+.white{
+    background-color: white; width: 150px; height: 150px;
+    margin: 20% auto;
+    border: 1px solid black;
+}
+.white div{
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    float: left;
+    margin: 16px;
+    border: 1px solid black;
+}
+
+h1{
+    text-align: center;
+}
+
+.nice-button {
+    margin-left: 0.3em;
+    border-radius: 1em;
+    border: none;
+    background: #7fbf7f;
+    color: white;
+    font-family: helvetica;
+    /*font-weight: bold;*/
+    transition: all 0.5s;
+    padding: 0.3em;
+}
+
+.nice-button:hover {
+    /*Maybe remove border*/
+    border: 0.05em solid green;
+    background: #329932;
+}
+
+.dice1 {
+    display: grid;
+    height: 4em;
+    width: 4em;
+    padding: 0.3em;
+    background: black;
+    margin-bottom: 1em;
+    grid-template-columns: 1em 1em 1em;
+    row-template-column: 1em 1em 1em;
+    grid-column-gap: 0.25em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+}
+.dice2 {
+    display: grid;
+    height: 4em;
+    width: 4em;
+    padding: 0.3em;
+    background: black;
+    margin-bottom: 1em;
+    grid-template-columns: 1em 1em 1em;
+    row-template-column: 1em 1em 1em;
+    grid-column-gap: 0.25em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+}
+.dice3 {
+    display: grid;
+    height: 4em;
+    width: 4em;
+    padding: 0.3em;
+    background: black;
+    margin-bottom: 1em;
+    grid-template-columns: 1em 1em 1em;
+    row-template-column: 1em 1em 1em;
+    grid-column-gap: 0.25em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+}
+.dice4 {
+    display: grid;
+    height: 4em;
+    width: 4em;
+    padding: 0.3em;
+    background: black;
+    margin-bottom: 1em;
+    grid-template-columns: 1em 1em 1em;
+    row-template-column: 1em 1em 1em;
+    grid-column-gap: 0.25em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+}
+
+.dot1,.dot2,.dot3,.dot4 {
+    background: white;
+    border-radius: 2em;
+    height: 1em;
+    width: 1em;
+    background-clip: padding-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    transition: all 0.5s;
+}
+
+.dot-off {
+    background: black;
+}
+  
