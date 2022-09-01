@@ -47,7 +47,7 @@ public class WebServerSocketEndPoint {
             clientPacketsHandler.joinARoom(
                     session,
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
-                    String.valueOf(jsonPacket.get("userId"))
+                    String.valueOf(jsonPacket.get("myUserId"))
             );
         }
     }

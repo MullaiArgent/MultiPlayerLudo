@@ -43,13 +43,17 @@ public class ClientPacketsHandler {
         }
     }
     public void joinARoom(Session session, int roomId, String userId){
+        JsonObject jsonPacket = new JsonObject();
         if (roomIds.containsKey(roomId)){
-            JsonObject jsonPacket = new JsonObject();
-            jsonPacket.put("action", "joinRoom");
+            jsonPacket.put("action", "newRoomMate");
             jsonPacket.put("roomMateId", userId);
             sendToSession(roomIds.get(roomId), jsonPacket);
+            jsonPacket.clear();
+            jsonPacket.put("action", "validAttemptToJoinRoom");
+            sendToSession(session, jsonPacket);
         }else{
-            // TODO send invalid rood id
+            jsonPacket.put("action", "invalidAttemptToJoinRoom");
+            sendToSession(session, jsonPacket);
         }
     }
 }
