@@ -213,4 +213,12 @@ h1{
 .dot-off {
     background: black;
 }
-  
+.log-out{
+    position: relative;
+    bottom: 20%;
+    left: 97%;
+}
+.log-out button{
+    border: white;
+    background-color: white;
+}

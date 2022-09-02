@@ -2,24 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a77569ed60.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="../styles/log_page_styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@300;400;500;600&display=swap');
+        .bg{
+            width: 100%;
+            height: 93vh;
+            background: url('https://www.teahub.io/photos/full/180-1805076_bhagavad-gita-bhagavad-gita-wallpaper-hd.jpg') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            box-shadow: inset 200px 200px 250px #000000, inset -120px -100px 250px #000000;
+        }
+        .container{
+            display:flex;
+            margin-top: 20%;
+            margin-right: 25%;
+            margin-left: 40%;
+        }
+        .container button{
+            background: #333;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-size:17px;
+            cursor:pointer;
+            margin:20px;
+            text-decoration:none;
+        }
+         .sing-up{
+            position: fixed;
+            left: 50%;
+            top: 61%;
+        }
+        .sing-up button{
+            position: static;
+            left: 30%;
+       
+        }
+
+        body {
+            font-family: 'Saira Semi Condensed', sans-serif;
+            padding:30px;
+        }
+
+        .input {
+            padding: 0.6rem 1.7rem 0.8rem;
+            background: rgb(255, 255, 255);
+            border-radius: 5px;
+            width: 240px;
+            position: relative;
+            left: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 1px 1px #e3e3e3;
+        }
+
+        .input input {
+            background: none;
+            border: none;
+            font-family: "Segoe UI", sans-serif;
+            outline: none;
+            font-size: 0.9em;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .input span {
+            width: 130%;
+            height: 3px;
+            position: absolute;
+            left: -10%;
+            top: 95%;
+            background: #868786;
+        }
+
+        .input input:focus ~ span {
+            background: #0067c0;
+        }
+
+
+        i{
+            color: #fefefe
+        }
+
+
+    </style>
     <title>Login</title>
 </head>
 <body>
-<div class="content">
-  <b>Please login to continue</b>
-  <form action="j_security_check" method="POST">
-    <table>
-      <tr>
-        <td><label for="username">Username:</label></td>
-        <td><input id="username" type="text" name="j_username" value=""/><td>
-      </tr>
-      <tr>
-        <td><label for="password">Password:</label></td>
-        <td><input id="password" type="password" name="j_password"/><td>
-        <td><input type="submit" value="Login" /></td>
-      </tr>
-    </table>
-  </form>
+<div class="bg">
+    <div class="container">
+        <form action="j_security_check" method="POST">
+            <label for="username">
+                <div class="input">
+                    <input class="input__inner" id="username" type="text" name="j_username" value="" placeholder="Username"/>
+                    <span class="input__border"></span>
+                </div>
+            </label>
+            <br>
+            <br>
+            <label for="password">
+                <div class="input">
+                    <input class="input__inner" id="password" type="password" name="j_password" placeholder="Password"/>
+                    <span class="input__border"></span>
+                </div>
+            </label>
+            <br>
+            <br>
+            <button type="submit"> Sign in</button>
+        </form>
+        <div class="sing-up">
+            <button onclick="location.href='../singUp.html'" type="submit" > Sign up <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        </div>
+        <br>
+        <i class="fa-brands fa-google fa-3x" style="top: 20%;left: 43%; position: relative;"></i>
+    </div>
 </div>
 </body>
 </html>

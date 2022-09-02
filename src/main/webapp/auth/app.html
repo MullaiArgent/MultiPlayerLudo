@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/app_styles.css">
+    <script src="https://kit.fontawesome.com/a77569ed60.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../scripts/dice.js"></script>
+    <script src="../scripts/app-event-handler.js"></script>
+    <title>Ludo</title>
+</head>
+<body>
+<div class="grid-container">
+    <div class="player1">
+        <p2>Player 1</p2>
+        <div class="dice1">
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+            <div class="dot1"></div>
+        </div>
+        <button class="nice-button" onclick="roll('dot1')">Roll Dice</button>
+    </div>
+    <br>
+    <div class="player3">
+        <p2>Player 3</p2>
+        <div class="dice2">
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+        </div>
+        <button class="nice-button" onclick="roll('dot2')">Roll Dice</button>
+    </div>
+    <div class="player4">
+        <p2>Player 4</p2>
+        <div class="dice3">
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+        </div>
+        <button class="nice-button" onclick="roll('dot3')">Roll Dice</button>
+    </div>
+    <br>
+    <div class="player2">
+        <p2>Player 2</p2>
+        <div class="dice4">
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+        </div>
+        <button class="nice-button" onclick="roll('dot4')">Roll Dice</button>
+    </div>
+    <div class="board">
+        <div class="row">
+            <div class="red-section black-border">
+                <div class="white">
+                    <div class="red"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="red"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="red"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="red"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
+                </div>
+            </div>
+            <div class="lane-section">
+                <div class="row"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box green"></div><div class="box green"></div></div>
+                <div class="row"><div class="box"></div><div class="box green"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box green"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box green"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box green"></div><div class="box"></div></div>
+            </div>
+            <div class="green-section black-border">
+                <div class="white">
+                    <div class="green"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="green"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="green"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="green"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="lane-section">
+                <div class="row">
+                    <div class="box"></div><div class="box red"></div><div class="box"></div>
+                    <div class="box"></div><div class="box"></div><div class="box"></div>
+                </div>
+                <div class="row">
+                    <div class="box"></div><div class="box red"></div><div class="box red"></div>
+                    <div class="box red"></div><div class="box red"></div><div class="box red"></div>
+                </div>
+                <div class="row">
+                    <div class="box"></div><div class="box"></div><div class="box"></div>
+                    <div class="box"></div><div class="box"></div><div class="box"></div>
+                </div>
+            </div>
+            <div class="winning-section"></div>
+            <div class="lane-section">
+                <div class="row">
+                    <div class="box"></div><div class="box"></div><div class="box"></div>
+                    <div class="box"></div><div class="box"></div><div class="box"></div>
+                </div>
+                <div class="row">
+                    <div class="box yellow"></div><div class="box yellow"></div><div class="box yellow"></div>
+                    <div class="box yellow"></div><div class="box yellow"></div><div class="box"></div>
+                </div>
+                <div class="row">
+                    <div class="box"></div><div class="box"></div><div class="box"></div>
+                    <div class="box"></div><div class="box yellow"></div><div class="box"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-section black-border">
+                <div class="white">
+                    <div class="blue"><i class="fa-solid fa-chess-pawn  " style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="blue"><i class="fa-solid fa-chess-pawn" style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="blue"><i class="fa-solid fa-chess-pawn" style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="blue"><i class="fa-solid fa-chess-pawn" style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
+                </div>
+            </div>
+            <div class="lane-section">
+                <div class="row"><div class="box"></div><div class="box blue"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box blue"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box blue"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box blue"></div><div class="box"></div></div>
+                <div class="row"><div class="box blue"></div><div class="box blue"></div><div class="box"></div></div>
+                <div class="row"><div class="box"></div><div class="box"></div><div class="box"></div></div>
+            </div>
+            <div class="yellow-section black-border">
+                <div class="white">
+                    <div class="yellow"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="yellow"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="yellow"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="yellow"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="log-out">
+    <button onclick="location.href='../LogOut.jsp'" type="submit"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></button>
+</div>
+</body>
+</html>

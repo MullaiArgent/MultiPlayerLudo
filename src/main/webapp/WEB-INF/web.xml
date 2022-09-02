@@ -1,8 +1,13 @@
 <web-app>
+  <welcome-file-list>
+    <welcome-file>secure/login.html</welcome-file>
+  </welcome-file-list>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>JDBC REALM</web-resource-name>
-      <url-pattern>/*</url-pattern>
+      <url-pattern>/auth/*</url-pattern>
+      <url-pattern>*.html</url-pattern>
+      <url-pattern>*.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>user</role-name>

@@ -6,12 +6,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/home")
+@WebServlet("/auth/home")
 public class HomePageController extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       // req.getSession().setAttribute("userId", req.getRemoteUser());
+        resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         req.getRequestDispatcher("home_page.html").forward(req, resp);
     }
 }

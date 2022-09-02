@@ -9,12 +9,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4eaa4a38-46ae-4038-8e51-bc90d73dc755" name="Changes" comment="">
+    <list default="true" id="4eaa4a38-46ae-4038-8e51-bc90d73dc755" name="Changes" comment="Terminate Btn">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/LogOut.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/confirm-password.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/singUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ClientPacketsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ClientPacketsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/WebServerSocketEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/WebServerSocketEndPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/home-event-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/home-event-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth/home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/image/home_page_banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/secure/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/secure/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/app_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/app_styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/home_page_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/log_page_styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/HomePageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/ClientPacketsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/ClientPacketsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/WebServerSocketEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/WebServerSocketEndPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/home_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/image/home_page_banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/scripts/home-event-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/scripts/home-event-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/secure/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/secure/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/styles/app_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/styles/app_styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/styles/home_page_styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HomePageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/ClientPacketsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/ClientPacketsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/WebServerSocketEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/WebServerSocketEndPoint.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +54,7 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -63,7 +90,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mulla/OneDrive/Documents/GitHub/MultiPlayerLudo/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mulla/OneDrive/Documents/GitHub/MultiPlayerLudo/src/main/webapp&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -73,21 +100,21 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp" />
       <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\resources" />
       <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\WEB-INF\lib" />
-      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\auth" />
       <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp" />
+      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\styles" />
+      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\secure" />
       <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\WEB-INF\jsps" />
-      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\image" />
-      <recent name="C:\Users\mulla\OneDrive\Documents\GitHub\MultiPlayerLudo\src\main\webapp\WEB-INF\confidential" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MultiPlayerLudo_war/home" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MultiPlayerLudo_war/auth/home" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="MultiPlayerLudo:war">
@@ -193,8 +220,21 @@
       <workItem from="1662016410893" duration="2862000" />
       <workItem from="1662023000780" duration="3093000" />
       <workItem from="1662026728006" duration="8691000" />
-      <workItem from="1662048417891" duration="16711000" />
+      <workItem from="1662048417891" duration="16751000" />
+      <workItem from="1662095509351" duration="3992000" />
+      <workItem from="1662106854944" duration="1562000" />
+      <workItem from="1662110860617" duration="13678000" />
+      <workItem from="1662125461407" duration="2783000" />
+      <workItem from="1662139102349" duration="3104000" />
     </task>
+    <task id="LOCAL-00001" summary="Terminate Btn">
+      <created>1662066349571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662066349571</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,5 +250,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Terminate Btn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminate Btn" />
   </component>
 </project>
