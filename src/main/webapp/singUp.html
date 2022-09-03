@@ -24,7 +24,7 @@
             margin-right: 25%;
             margin-left: 40%;
         }
-        .container a{
+        .container button{
             background: #333;
             color: #fff;
             padding: 10px 30px;
@@ -40,68 +40,8 @@
             padding:30px;
         }
 
-
-        .popup-container {
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-            transform: scale(1.3);
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(21, 17, 17, 0.61);
-            display: flex;
-            align-items: center;
-        }
-        .popup-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-        }
-        .popup-content p{
-            font-size: 17px;
-            padding: 10px;
-            line-height: 20px;
-        }
-        .popup-content a.close{
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            background: none;
-            padding: 0;
-            margin: 0;
-            text-decoration:none;
-        }
-
-        .popup-content a.close:hover{
-            color:#333;
-        }
-
-        .popup-content span:hover,
-        .popup-content span:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .popup-container:target{
-            visibility: visible;
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .popup-container h3{
-            margin:10px;
-        }
         .input {
-            padding: 0.6rem 1.7rem;
-            padding-bottom: 0.8rem;
+            padding: 0.6rem 1.7rem 0.8rem;
             background: rgb(255, 255, 255);
             border-radius: 5px;
             width: 240px;
@@ -134,7 +74,6 @@
             background: #0067c0;
         }
 
-
         n {
             width: 100%;
             padding: 0.7rem;
@@ -155,6 +94,7 @@
     <title>Sign Up</title>
 </head>
 <body>
+<form action="createAccount" method="post">
     <div class="bg">
         <div class="container">
             <label for="username">
@@ -169,16 +109,17 @@
                 </div>
                 <br>
                 <div class="input">
-                    <input class="input__inner" id="confirm_password" type="password" name="password" value="" placeholder="Re-type Password"/>
+                    <input class="input__inner" id="confirm_password" type="password" name="re-password" value="" placeholder="Re-type Password"/>
                     <span id='message'></span>
                     <span class="input__border"></span>
                 </div>
                 <br>
                 <br>
-                <a type="submit" style="left: 20%; position: relative;">Sign up <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                <button type="submit" style="left: 20%; position: relative;">Sign up <i class="fa fa-sign-in" aria-hidden="true"></i></button>
                 <i class="fa-brands fa-google fa-2x" style="left: 20%;top:3%; position: relative;"></i>
             </label>
         </div>
     </div>
+</form>
 </body>
 </html>

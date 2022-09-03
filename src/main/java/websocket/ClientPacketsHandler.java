@@ -1,5 +1,6 @@
 package websocket;
 
+import Model.Room;
 import org.json.simple.JsonObject;
 import javax.enterprise.context.ApplicationScoped;
 import javax.websocket.Session;
@@ -9,8 +10,8 @@ import java.util.Map;
 
 @ApplicationScoped
 public class ClientPacketsHandler {
-    private final Map<String, Session> clientSessions = new HashMap<>();
-    private final Map<Integer, Session> roomIds = new HashMap<>();
+    private static final Map<String, Session> clientSessions = new HashMap<>();
+    private static final Map<Integer, Room> rooms = new HashMap<>();
 
     public void addAClientSession(Session session, String userId){
         clientSessions.put(userId, session);
@@ -24,17 +25,6 @@ public class ClientPacketsHandler {
         clientSessions.entrySet().removeIf(e -> session.equals(e.getValue()));      // remove the entry-set based on the values
         System.out.println("LOG : A Client has left the Application");
     }
-    public void generateRoomId(Session session){
-        int roomId;
-        do{
-            roomId = (int)(Math.random() * (8998) + 9999);
-        }while (roomIds.containsKey(roomId));                 // To avoid exceptional corner case of generating two or more room Ids
-        roomIds.put(roomId, session);
-        JsonObject roomIdJson = new JsonObject();
-        roomIdJson.put("action", "roomId");
-        roomIdJson.put("roomId", String.valueOf(roomId));
-        sendToSession(session, roomIdJson);
-    }
     private void sendToSession(Session session, JsonObject jsonObject){
         try{
             session.getBasicRemote().sendText(jsonObject.toJson());
@@ -42,18 +32,35 @@ public class ClientPacketsHandler {
             System.out.println("Log : Exception in Sending a packet to the client");
         }
     }
+    public void generateRoomId(Session session, String ownerId){
+        int roomId;
+        do{
+            roomId = (int)(Math.random() * (8998) + 9999);
+        }while (rooms.containsKey(roomId));                 // To avoid exceptional corner case of generating two or more room Ids
+        rooms.put(roomId, new Room(ownerId));
+
+        JsonObject roomIdJson = new JsonObject();
+        roomIdJson.put("action", "roomId");
+        roomIdJson.put("roomId", String.valueOf(roomId));
+        sendToSession(session, roomIdJson);
+    }
     public void joinARoom(Session session, int roomId, String userId){
         JsonObject jsonPacket = new JsonObject();
-        if (roomIds.containsKey(roomId)){
+        Room room = rooms.get(roomId);
+        if (rooms.containsKey(roomId)){
             jsonPacket.put("action", "newRoomMate");
             jsonPacket.put("roomMateId", userId);
-            sendToSession(roomIds.get(roomId), jsonPacket);
+            sendToSession(room.getRoomOwnerSession(), jsonPacket);  // to the owner
             jsonPacket.clear();
             jsonPacket.put("action", "validAttemptToJoinRoom");
-            sendToSession(session, jsonPacket);
+            jsonPacket.put("roomOwnerId", room.getRoomOwnerId());
+            sendToSession(session, jsonPacket);                                  // to the joiner
         }else{
             jsonPacket.put("action", "invalidAttemptToJoinRoom");
-            sendToSession(session, jsonPacket);
+            sendToSession(session, jsonPacket);                                  // to the joiner
         }
+    }
+    public void leaveRoom(Session session, String userId){
+
     }
 }

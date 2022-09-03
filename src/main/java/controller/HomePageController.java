@@ -12,6 +12,7 @@ public class HomePageController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        req.getSession().setAttribute("userId", req.getRemoteUser());
         req.getRequestDispatcher("home_page.html").forward(req, resp);
     }
 }

@@ -1,5 +1,6 @@
 package websocket;
 
+import org.jboss.errai.codegen.util.Str;
 import org.json.simple.DeserializationException;
 import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
@@ -19,6 +20,7 @@ public class WebServerSocketEndPoint {
     @OnOpen
     public void onOpen(Session session, EndpointConfig config) {
         HttpSession httpSession = (HttpSession) config.getUserProperties().get(HttpSession.class.getName());
+        System.out.println((String) httpSession.getAttribute("userId"));
         clientPacketsHandler.addAClientSession(session, (String) httpSession.getAttribute("userId"));
     }
     @OnClose
@@ -41,13 +43,18 @@ public class WebServerSocketEndPoint {
             deserializationException.printStackTrace();
         }
         if (jsonPacket.get("action").equals("createARoom")){
-            clientPacketsHandler.generateRoomId(session);
+            clientPacketsHandler.generateRoomId(session, String.valueOf(jsonPacket.get("ownerId")));
         }
         else if (jsonPacket.get("action").equals("joinRoom")){
             clientPacketsHandler.joinARoom(
                     session,
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
-                    String.valueOf(jsonPacket.get("myUserId"))
+                    String.valueOf(jsonPacket.get("userId"))
+            );
+        }else if(jsonPacket.get("action").equals("leaveRoom")){
+            clientPacketsHandler.leaveRoom(
+                    session,
+                    String.valueOf(jsonPacket.get("userId"))
             );
         }
     }
