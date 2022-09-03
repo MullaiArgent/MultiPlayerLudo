@@ -1,6 +1,5 @@
 package websocket;
 
-import org.jboss.errai.codegen.util.Str;
 import org.json.simple.DeserializationException;
 import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
@@ -38,12 +37,16 @@ public class WebServerSocketEndPoint {
         JsonObject jsonPacket = new JsonObject();
         try{
             jsonPacket = (JsonObject)Jsoner.deserialize(packet);
+            System.out.println(jsonPacket);
         }catch (DeserializationException deserializationException){
             System.out.println("Invalid incoming Json Packet");
             deserializationException.printStackTrace();
         }
         if (jsonPacket.get("action").equals("createARoom")){
-            clientPacketsHandler.generateRoomId(session, String.valueOf(jsonPacket.get("ownerId")));
+            clientPacketsHandler.generateRoomId(
+                    session,
+                    String.valueOf(jsonPacket.get("ownerId"))
+            );
         }
         else if (jsonPacket.get("action").equals("joinRoom")){
             clientPacketsHandler.joinARoom(
@@ -53,8 +56,18 @@ public class WebServerSocketEndPoint {
             );
         }else if(jsonPacket.get("action").equals("leaveRoom")){
             clientPacketsHandler.leaveRoom(
-                    session,
+                    Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
                     String.valueOf(jsonPacket.get("userId"))
+            );
+        }else if(jsonPacket.get("action").equals("terminateRoom")){
+            clientPacketsHandler.terminateRoom(
+                    Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
+                    String.valueOf(jsonPacket.get("userId"))
+            );
+        }
+        else if (jsonPacket.get("action").equals("startGame")){
+            clientPacketsHandler.startGame(
+                    Integer.parseInt(String.valueOf(jsonPacket.get("roomId")))
             );
         }
     }

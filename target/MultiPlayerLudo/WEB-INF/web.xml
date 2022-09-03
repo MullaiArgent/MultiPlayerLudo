@@ -6,8 +6,6 @@
     <web-resource-collection>
       <web-resource-name>JDBC REALM</web-resource-name>
       <url-pattern>/auth/*</url-pattern>
-      <url-pattern>*.html</url-pattern>
-      <url-pattern>*.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>user</role-name>
