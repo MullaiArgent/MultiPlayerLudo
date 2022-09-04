@@ -15,12 +15,33 @@ import java.util.logging.Logger;
 public class WebServerSocketEndPoint {
 
     ClientPacketsHandler clientPacketsHandler = new ClientPacketsHandler();
+    HttpSession httpSession;
 
     @OnOpen
     public void onOpen(Session session, EndpointConfig config) {
-        HttpSession httpSession = (HttpSession) config.getUserProperties().get(HttpSession.class.getName());
-        System.out.println((String) httpSession.getAttribute("userId"));
-        clientPacketsHandler.addAClientSession(session, (String) httpSession.getAttribute("userId"));
+        httpSession= (HttpSession) config.getUserProperties().get(HttpSession.class.getName());
+        if (httpSession.getAttribute("roomId") == null){
+            try{
+                clientPacketsHandler.addAClientSession(
+                        session,
+                        String.valueOf(httpSession.getAttribute("userId"))
+                );
+            }catch (NullPointerException nullPointerException){
+                nullPointerException.printStackTrace();
+            }
+        }else{
+            try{
+                clientPacketsHandler.addAClientSession(
+                        session,
+                        String.valueOf(httpSession.getAttribute("userId")),
+                        Integer.parseInt(String.valueOf(httpSession.getAttribute("roomId")))
+                );
+            }catch (NullPointerException nullPointerException){
+                nullPointerException.printStackTrace();
+            }
+        }
+
+
     }
     @OnClose
     public void onClose(Session session){
@@ -54,12 +75,14 @@ public class WebServerSocketEndPoint {
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
                     String.valueOf(jsonPacket.get("userId"))
             );
-        }else if(jsonPacket.get("action").equals("leaveRoom")){
+        }
+        else if(jsonPacket.get("action").equals("leaveRoom")){
             clientPacketsHandler.leaveRoom(
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
                     String.valueOf(jsonPacket.get("userId"))
             );
-        }else if(jsonPacket.get("action").equals("terminateRoom")){
+        }
+        else if(jsonPacket.get("action").equals("terminateRoom")){
             clientPacketsHandler.terminateRoom(
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
                     String.valueOf(jsonPacket.get("userId"))

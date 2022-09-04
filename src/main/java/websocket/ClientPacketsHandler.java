@@ -26,6 +26,17 @@ public class ClientPacketsHandler {
         jsonPacket.put("action", "userId");
         jsonPacket.put("myUserId", userId);
         sendToSession(session, jsonPacket);
+
+        System.out.println("LOG : A Client have joined the Server");
+    }
+    public void addAClientSession(Session session, String userId, int roomId){
+        clientSessions.put(userId, session);
+        JsonObject jsonPacket = new JsonObject();
+        jsonPacket.put("action", "userId");
+        jsonPacket.put("myUserId", userId);
+        jsonPacket.put("roomId", roomId);
+        sendToSession(session, jsonPacket);
+
         System.out.println("LOG : A Client have joined the Server");
     }
     public void removeClientSession(Session session){

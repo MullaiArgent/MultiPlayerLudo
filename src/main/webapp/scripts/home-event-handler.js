@@ -4,35 +4,44 @@ socket.onmessage = onMessage;
 let myUserId;
 let roomId;
 function onMessage(event){
+    document.getElementsByTagName("p").length
     const packet = JSON.parse(event.data);
     console.log(packet);
-    if(packet.action === "userId"){
+    if      (packet.action === "userId"){
         myUserId = packet.myUserId;
         console.log(myUserId)
     }
     else if (packet.action === "roomId"){
         const popHeader = document.getElementById("pop-h3");
-        popHeader.innerText = "Room Id is : " + packet.roomId;/* + "<a onclick=\"startGame()\" id=\"start-gamebtn\">Start</a>";*/
+        popHeader.innerText = "Room Id is : " + packet.roomId;
         const startGameButton = document.createElement("a");
         startGameButton.innerHTML = "StartGame";
         startGameButton.id = "start-game-btn";
         startGameButton.onclick = function (){
-            startGame(); // TODO button to get to App
+            startGame();
         }
+        startGameButton.hidden = true;
+        popHeader.append(startGameButton)
         roomId = packet.roomId;
         document.getElementById("close-btn").setAttribute("onclick", "closePopUp(\"terminateRoom\")");
     }
-    else if(packet.action === "newRoomMate"){
+    else if (packet.action === "newRoomMate"){
         const roomMate = document.createElement("p");
         roomMate.setAttribute("id", "pop-p-" + packet.roomMateId);
         roomMate.innerHTML = packet.roomMateId + " has joined the Room";
         const popupContent = document.getElementById("popup-content");
+        if (document.getElementsByTagName("p").length >= 0){
+            document.getElementById("start-game-btn").hidden = false;
+        }
         popupContent.appendChild(roomMate);
     }
-    else if(packet.action === "roomMateLeft"){
+    else if (packet.action === "roomMateLeft"){
         document.getElementById("pop-p-" + packet.roomMateId).remove();
+        if (document.getElementsByTagName("p").length === 0){
+            document.getElementById("start-game-btn").hidden = true;
+        }
     }
-    else if(packet.action === "roomTerminated"){
+    else if (packet.action === "roomTerminated"){
         const ptags = document.getElementsByTagName("p");
         while (ptags[0]){
             ptags[0].parentNode.removeChild(ptags[0]);
@@ -41,10 +50,10 @@ function onMessage(event){
         document.getElementById("close-btn").removeAttribute("onclick");
         document.getElementById("pop-h3").innerText = "Room Terminated by " + packet.roomOwnerId;
     }
-    else if(packet.action === "invalidAttemptToJoinRoom"){
+    else if (packet.action === "invalidAttemptToJoinRoom"){
         document.getElementById("pop-h3").innerText = "Invalid Room ID";
     }
-    else if(packet.action === "validAttemptToJoinRoom"){
+    else if (packet.action === "validAttemptToJoinRoom"){
         document.getElementById("pop-h3").innerText = "Joined the Room";
         const roomMate = document.createElement("p");
         roomMate.innerHTML = "Awaiting " + packet.roomOwnerId + " to start the game";
@@ -53,15 +62,32 @@ function onMessage(event){
         document.getElementById("close-btn").setAttribute("onclick", "closePopUp(\"leaveRoom\");");
     }
     else if (packet.action === "startGame"){
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                const data = xhr.responseText;
-                alert(data);
-            }
-        }
-        xhr.open('GET', '${pageContext.request.contextPath}/app', true);
-        xhr.send(null);
+        // let XmlHttp;
+        // if (window.XMLHttpRequest){  // code for IE7+, Firefox, Chrome, Opera, Safari
+        //     XmlHttp = new XMLHttpRequest();
+        // }else{                       // for older versions of IE
+        //     XmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        // }
+        // XmlHttp.onreadystatechange = function (){
+        //     if (XmlHttp.readyState === 4 && XmlHttp.status === 200){
+        //         document.getElementById("page").innerHTML = null;
+        //         document.getElementById("page").innerHTML = XmlHttp.responseText
+        //     }
+        // }
+        // XmlHttp.open("GET","/MultiPlayerLudo_war/auth/app", true);
+        // XmlHttp.send();
+
+        const appHref = document.createElement("form");
+        appHref.setAttribute("action", "app");
+        appHref.setAttribute("method", "POST");
+        const param = document.createElement("input")
+        param.setAttribute("name", "roomId");
+        param.setAttribute("value", roomId);
+        appHref.appendChild(param);
+        document.body.appendChild(appHref);
+        appHref.submit();
+
+        // location.href='/MultiPlayerLudo_war/auth/app?roomId=' + roomId;
     }
 }
 function createARoom(){

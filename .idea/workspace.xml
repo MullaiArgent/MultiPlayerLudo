@@ -9,24 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4eaa4a38-46ae-4038-8e51-bc90d73dc755" name="Changes" comment="Room Model">
+    <list default="true" id="4eaa4a38-46ae-4038-8e51-bc90d73dc755" name="Changes" comment="Duplex Room">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ClientPacketsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ClientPacketsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/WebServerSocketEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/WebServerSocketEndPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/auth/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth/home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/home-event-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/home-event-handler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/HomePageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/ClientPacketsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/ClientPacketsHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/WebServerSocketEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/WebServerSocketEndPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/scripts/home-event-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/scripts/home-event-handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/secure/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/secure/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/HomePageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/websocket/ClientPacketsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/ClientPacketsHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/websocket/WebServerSocketEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/WebServerSocketEndPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AppController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +208,9 @@
       <workItem from="1662139102349" duration="6903000" />
       <workItem from="1662176980356" duration="21663000" />
       <workItem from="1662214464162" duration="4752000" />
-      <workItem from="1662237327524" duration="5102000" />
+      <workItem from="1662237327524" duration="5324000" />
+      <workItem from="1662273254087" duration="570000" />
+      <workItem from="1662273983100" duration="7945000" />
     </task>
     <task id="LOCAL-00001" summary="Terminate Btn">
       <created>1662066349571</created>
@@ -239,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662193541589</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Duplex Room">
+      <created>1662243237831</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662243237831</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +261,7 @@
     <MESSAGE value="Terminate Btn" />
     <MESSAGE value="Auth" />
     <MESSAGE value="Room Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Room Model" />
+    <MESSAGE value="Duplex Room" />
+    <option name="LAST_COMMIT_MESSAGE" value="Duplex Room" />
   </component>
 </project>
