@@ -10,15 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eaa4a38-46ae-4038-8e51-bc90d73dc755" name="Changes" comment="Duplex Room">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/ClientPacketsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/ClientPacketsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/websocket/WebServerSocketEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/websocket/WebServerSocketEndPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/auth/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/app-event-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/app-event-handler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/home-event-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/home-event-handler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/ClientPacketsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/ClientPacketsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/WebServerSocketEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/classes/websocket/WebServerSocketEndPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MultiPlayerLudo/scripts/home-event-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/MultiPlayerLudo/scripts/home-event-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/ClientPacketsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/ClientPacketsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/WebServerSocketEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/websocket/WebServerSocketEndPoint.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +217,9 @@
       <workItem from="1662237327524" duration="5324000" />
       <workItem from="1662273254087" duration="570000" />
       <workItem from="1662273983100" duration="7945000" />
+      <workItem from="1662314734189" duration="170000" />
+      <workItem from="1662352766817" duration="27000" />
+      <workItem from="1662398357794" duration="5663000" />
     </task>
     <task id="LOCAL-00001" summary="Terminate Btn">
       <created>1662066349571</created>

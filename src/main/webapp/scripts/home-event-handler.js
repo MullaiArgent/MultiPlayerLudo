@@ -2,12 +2,12 @@ const socket = new WebSocket("ws://localhost:8080/MultiPlayerLudo_war/actions");
 
 socket.onmessage = onMessage;
 let myUserId;
-let roomId;
+let myRoomId;
 function onMessage(event){
     document.getElementsByTagName("p").length
     const packet = JSON.parse(event.data);
     console.log(packet);
-    if      (packet.action === "userId"){
+    if     (packet.action === "userId"){
         myUserId = packet.myUserId;
         console.log(myUserId)
     }
@@ -22,7 +22,7 @@ function onMessage(event){
         }
         startGameButton.hidden = true;
         popHeader.append(startGameButton)
-        roomId = packet.roomId;
+        myRoomId = packet.roomId;
         document.getElementById("close-btn").setAttribute("onclick", "closePopUp(\"terminateRoom\")");
     }
     else if (packet.action === "newRoomMate"){
@@ -46,7 +46,7 @@ function onMessage(event){
         while (ptags[0]){
             ptags[0].parentNode.removeChild(ptags[0]);
         }
-        roomId = null;
+        myRoomId = null;
         document.getElementById("close-btn").removeAttribute("onclick");
         document.getElementById("pop-h3").innerText = "Room Terminated by " + packet.roomOwnerId;
     }
@@ -82,7 +82,7 @@ function onMessage(event){
         appHref.setAttribute("method", "POST");
         const param = document.createElement("input")
         param.setAttribute("name", "roomId");
-        param.setAttribute("value", roomId);
+        param.setAttribute("value", myRoomId);
         appHref.appendChild(param);
         document.body.appendChild(appHref);
         appHref.submit();
@@ -97,13 +97,13 @@ function createARoom(){
     }));
 }
 function joinRoom(){
-    roomId =  document.getElementById("roomId").value;
-    if (roomId !== null){
-        console.log(roomId);
+    myRoomId =  document.getElementById("roomId").value;
+    if (myRoomId !== null){
+        console.log(myRoomId);
         socket.send(JSON.stringify({
             action : "joinRoom",
             userId : myUserId,
-            roomId : roomId
+            roomId : myRoomId
         }));
     }
 }
@@ -112,20 +112,20 @@ function closePopUp(action){
     socket.send(JSON.stringify({
         action : action,
         userId : myUserId,
-        roomId : roomId
+        roomId : myRoomId
     }));
     document.getElementById("pop-h3").innerText = null;
     const ptags = document.getElementsByTagName("p");
     while (ptags[0]){
         ptags[0].parentNode.removeChild(ptags[0]);
     }
-    roomId = null;
+    myRoomId = null;
     document.getElementById("close-btn").removeAttribute("onclick");
 }
 function startGame(){
     socket.send(JSON.stringify({
         action : "startGame",
-        roomId : roomId,
+        roomId : myRoomId,
         userId : myUserId
     }));
 }

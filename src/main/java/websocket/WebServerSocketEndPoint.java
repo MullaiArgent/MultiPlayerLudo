@@ -36,12 +36,10 @@ public class WebServerSocketEndPoint {
                         String.valueOf(httpSession.getAttribute("userId")),
                         Integer.parseInt(String.valueOf(httpSession.getAttribute("roomId")))
                 );
-            }catch (NullPointerException nullPointerException){
+            }catch (NullPointerException | DeserializationException nullPointerException){
                 nullPointerException.printStackTrace();
             }
         }
-
-
     }
     @OnClose
     public void onClose(Session session){
@@ -63,7 +61,7 @@ public class WebServerSocketEndPoint {
             System.out.println("Invalid incoming Json Packet");
             deserializationException.printStackTrace();
         }
-        if (jsonPacket.get("action").equals("createARoom")){
+        if      (jsonPacket.get("action").equals("createARoom")){
             clientPacketsHandler.generateRoomId(
                     session,
                     String.valueOf(jsonPacket.get("ownerId"))
@@ -76,13 +74,13 @@ public class WebServerSocketEndPoint {
                     String.valueOf(jsonPacket.get("userId"))
             );
         }
-        else if(jsonPacket.get("action").equals("leaveRoom")){
+        else if (jsonPacket.get("action").equals("leaveRoom")){
             clientPacketsHandler.leaveRoom(
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
                     String.valueOf(jsonPacket.get("userId"))
             );
         }
-        else if(jsonPacket.get("action").equals("terminateRoom")){
+        else if (jsonPacket.get("action").equals("terminateRoom")){
             clientPacketsHandler.terminateRoom(
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
                     String.valueOf(jsonPacket.get("userId"))
@@ -91,6 +89,12 @@ public class WebServerSocketEndPoint {
         else if (jsonPacket.get("action").equals("startGame")){
             clientPacketsHandler.startGame(
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId")))
+            );
+        }
+        else if (jsonPacket.get("action").equals("gameState")){
+            clientPacketsHandler.updateGameState(
+                    Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
+                    String.valueOf(jsonPacket.get("gameState"))
             );
         }
     }

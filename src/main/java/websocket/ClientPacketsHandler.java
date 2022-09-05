@@ -1,7 +1,10 @@
 package websocket;
 
 import Model.Room;
+import org.json.simple.DeserializationException;
 import org.json.simple.JsonObject;
+import org.json.simple.Jsoner;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.websocket.Session;
 import java.io.IOException;
@@ -29,12 +32,13 @@ public class ClientPacketsHandler {
 
         System.out.println("LOG : A Client have joined the Server");
     }
-    public void addAClientSession(Session session, String userId, int roomId){
+    public void addAClientSession(Session session, String userId, int roomId) throws DeserializationException {
         clientSessions.put(userId, session);
         JsonObject jsonPacket = new JsonObject();
         jsonPacket.put("action", "userId");
         jsonPacket.put("myUserId", userId);
-        jsonPacket.put("roomId", roomId);
+        jsonPacket.put("myRoomId", roomId);
+        jsonPacket.put("gameState", rooms.get(roomId).getGameState());
         sendToSession(session, jsonPacket);
 
         System.out.println("LOG : A Client have joined the Server");
@@ -106,5 +110,8 @@ public class ClientPacketsHandler {
                 .getRoomMates()
                 .forEach((roomMateId, session) -> sendToSession(session, jsonPacket));
         room.setPlaying(true);
+    }
+    public void updateGameState(int roomId, String gameState){
+        rooms.get(roomId).setGameState(gameState);
     }
 }
