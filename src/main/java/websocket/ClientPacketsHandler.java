@@ -3,8 +3,6 @@ package websocket;
 import Model.Room;
 import org.json.simple.DeserializationException;
 import org.json.simple.JsonObject;
-import org.json.simple.Jsoner;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.websocket.Session;
 import java.io.IOException;
@@ -40,7 +38,10 @@ public class ClientPacketsHandler {
         jsonPacket.put("myRoomId", roomId);
         jsonPacket.put("gameState", rooms.get(roomId).getGameState());
         sendToSession(session, jsonPacket);
-
+        Room room = rooms.get(roomId);
+        if (!room.getRoomMates().containsKey(userId)) {
+            room.getRoomMates().put(userId, session);
+        }
         System.out.println("LOG : A Client have joined the Server");
     }
     public void removeClientSession(Session session){
@@ -73,7 +74,7 @@ public class ClientPacketsHandler {
                 jsonPacket.put("action", "validAttemptToJoinRoom");
                 jsonPacket.put("roomOwnerId", room.getRoomOwnerId());
                 sendToSession(session, jsonPacket);                                  // to the joiner
-                room.getRoomMates().put(userId, session);
+                room.addARoomMate(userId, session);
                 return;
             }
         }
@@ -106,12 +107,28 @@ public class ClientPacketsHandler {
         Room room = rooms.get(roomId);
         JsonObject jsonPacket = new JsonObject();
         jsonPacket.put("action", "startGame");
+        room.populateTheJson();
         room
                 .getRoomMates()
-                .forEach((roomMateId, session) -> sendToSession(session, jsonPacket));
+                .forEach(
+                        (roomMateId, session) -> sendToSession(session, jsonPacket));
         room.setPlaying(true);
+        room.getRoomMates().clear();
     }
-    public void updateGameState(int roomId, String gameState){
-        rooms.get(roomId).setGameState(gameState);
+    public void rollADice(int roomId, String dotParam){
+        JsonObject jsonPacket = new JsonObject();
+        jsonPacket.put("action","drawADice");
+        jsonPacket.put("dotParam", dotParam);
+        jsonPacket.put("diceOutput", (int) (Math.random() * 5) + 1);
+        rooms
+                .get(roomId)
+                .getRoomMates()
+                .forEach(
+                        (userId, session) -> {
+                            if (session == null)
+                                System.out.println("the session is null");
+                            else
+                                sendToSession(session, jsonPacket);
+                        });
     }
 }

@@ -7,6 +7,7 @@
 <%
 session.invalidate();
 session.setMaxInactiveInterval(0);
+
 response.sendRedirect("/MultiPlayerLudo_war/auth/home");
 %>
 </body>

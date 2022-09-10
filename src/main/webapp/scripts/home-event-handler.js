@@ -1,4 +1,4 @@
-const socket = new WebSocket("ws://localhost:8080/MultiPlayerLudo_war/actions");
+let socket = new WebSocket("ws://localhost:8080/MultiPlayerLudo_war/actions");
 
 socket.onmessage = onMessage;
 let myUserId;

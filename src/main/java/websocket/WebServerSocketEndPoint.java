@@ -91,10 +91,10 @@ public class WebServerSocketEndPoint {
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId")))
             );
         }
-        else if (jsonPacket.get("action").equals("gameState")){
-            clientPacketsHandler.updateGameState(
+        else if(jsonPacket.get("action").equals("rollADice")){
+            clientPacketsHandler.rollADice(
                     Integer.parseInt(String.valueOf(jsonPacket.get("roomId"))),
-                    String.valueOf(jsonPacket.get("gameState"))
+                    String.valueOf(jsonPacket.get("dotParam"))
             );
         }
     }

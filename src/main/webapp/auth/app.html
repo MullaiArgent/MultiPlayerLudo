@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/app_styles.css">
     <script src="https://kit.fontawesome.com/a77569ed60.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../styles/app_styles.css">
     <script src="../scripts/dice.js"></script>
     <script src="../scripts/app-event-handler.js"></script>
     <title>Ludo</title>
@@ -14,8 +15,8 @@
 <body>
 <div class="grid-container">
     <div class="player1">
-        <p2>Player 1</p2>
-        <div class="dice1">
+        <p2 id="player1UserId">Player 1</p2>  <h4 id="time">50</h4>
+        <div class="dice">
             <div class="dot1"></div>
             <div class="dot1"></div>
             <div class="dot1"></div>
@@ -25,64 +26,62 @@
             <div class="dot1"></div>
             <div class="dot1"></div>
             <div class="dot1"></div>
-        </div>
-        <button class="nice-button" onclick="roll('dot1')">Roll Dice</button>
+        </div> 
+
+        
     </div>
     <br>
     <div class="player3">
-        <p2>Player 3</p2>
-        <div class="dice2">
-            <div class="dot2"></div>
-            <div class="dot2"></div>
-            <div class="dot2"></div>
-            <div class="dot2"></div>
-            <div class="dot2"></div>
-            <div class="dot2"></div>
-            <div class="dot2"></div>
-            <div class="dot2"></div>
-            <div class="dot2"></div>
+        <p2 id="player3UserId">Player 3</p2> <h4 id="time">50</h4>
+        <div class="dice">
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
+            <div class="dot3"></div>
         </div>
-        <button class="nice-button" onclick="roll('dot2')">Roll Dice</button>
     </div>
     <div class="player4">
-        <p2>Player 4</p2>
-        <div class="dice3">
-            <div class="dot3"></div>
-            <div class="dot3"></div>
-            <div class="dot3"></div>
-            <div class="dot3"></div>
-            <div class="dot3"></div>
-            <div class="dot3"></div>
-            <div class="dot3"></div>
-            <div class="dot3"></div>
-            <div class="dot3"></div>
+        <p2 id="player4UserId">Player 4</p2> <h4 id="time">50</h4>
+        <div class="dice">
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
+            <div class="dot4"></div>
         </div>
-        <button class="nice-button" onclick="roll('dot3')">Roll Dice</button>
     </div>
     <br>
     <div class="player2">
-        <p2>Player 2</p2>
-        <div class="dice4">
-            <div class="dot4"></div>
-            <div class="dot4"></div>
-            <div class="dot4"></div>
-            <div class="dot4"></div>
-            <div class="dot4"></div>
-            <div class="dot4"></div>
-            <div class="dot4"></div>
-            <div class="dot4"></div>
-            <div class="dot4"></div>
+        <p2 id="player2UserId">Player 2</p2> <h4 id="time">50</h4>
+        <div class="dice">
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
+            <div class="dot2"></div>
         </div>
-        <button class="nice-button" onclick="roll('dot4')">Roll Dice</button>
     </div>
     <div class="board">
         <div class="row">
             <div class="red-section black-border">
                 <div class="white">
-                    <div class="red" id="red-home1"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="red" id="red-home2"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="red" id="red-home3"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="red" id="red-home4"><i class="fa-solid fa-chess-pawn" style="color: red; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="red" id="red-home1"></div>
+                    <div class="red" id="red-home2"></div>
+                    <div class="red" id="red-home3"></div>
+                    <div class="red" id="red-home4"></div>
                 </div>
             </div>
             <div class="lane-section">
@@ -118,115 +117,115 @@
             </div>
             <div class="green-section black-border">
                 <div class="white">
-                    <div class="green" id="green-home1"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="green" id="green-home2"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="green" id="green-home3"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="green" id="green-home4"><i class="fa-solid fa-chess-pawn" style="color: green; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="green" id="green-home1"></div>
+                    <div class="green" id="green-home2"></div>
+                    <div class="green" id="green-home3"></div>
+                    <div class="green" id="green-home4"></div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="lane-section">
                 <div class="row">
-                    <div class="box"        id="box42">42</div>
-                    <div class="box red"    id="box43">43</div>
-                    <div class="box"        id="box44">44</div>
-                    <div class="box"        id="box45">45</div>
-                    <div class="box"        id="box46">46</div>
-                    <div class="box"        id="box47">47</div>
+                    <div class="box"        id="box42"></div>
+                    <div class="box red"    id="box43"></div>
+                    <div class="box"        id="box44"></div>
+                    <div class="box"        id="box45"></div>
+                    <div class="box"        id="box46"></div>
+                    <div class="box"        id="box47"></div>
                 </div>
                 <div class="row">
-                    <div class="box"        id="box41">41</div>
-                    <div class="box red"    id="red-box5">5</div>
-                    <div class="box red"    id="red-box4">4</div>
-                    <div class="box red"    id="red-box3">3</div>
-                    <div class="box red"    id="red-box2">2</div>
-                    <div class="box red"    id="red-box1">1</div>
+                    <div class="box"        id="box41"></div>
+                    <div class="box red"    id="red-box5"></div>
+                    <div class="box red"    id="red-box4"></div>
+                    <div class="box red"    id="red-box3"></div>
+                    <div class="box red"    id="red-box2"></div>
+                    <div class="box red"    id="red-box1"></div>
                 </div>
                 <div class="row">
-                    <div class="box"        id="box40">40</div>
-                    <div class="box"        id="box39">39</div>
-                    <div class="box"        id="box38">38</div>
-                    <div class="box"        id="box37">37</div>
-                    <div class="box"        id="box36">36</div>
-                    <div class="box"        id="box35">35</div>
+                    <div class="box"        id="box40"></div>
+                    <div class="box"        id="box39"></div>
+                    <div class="box"        id="box38"></div>
+                    <div class="box"        id="box37"></div>
+                    <div class="box"        id="box36"></div>
+                    <div class="box"        id="box35"></div>
                 </div>
             </div>
             <div class="winning-section"></div>
             <div class="lane-section">
                 <div class="row">
-                    <div class="box"        id="box9">9</div>
-                    <div class="box"        id="box10">10</div>
-                    <div class="box"        id="box11">11</div>
-                    <div class="box"        id="box12">12</div>
-                    <div class="box"        id="box13">13</div>
-                    <div class="box"        id="box14">14</div>
+                    <div class="box"        id="box9"></div>
+                    <div class="box"        id="box10"></div>
+                    <div class="box"        id="box11"></div>
+                    <div class="box"        id="box12"></div>
+                    <div class="box"        id="box13"></div>
+                    <div class="box"        id="box14"></div>
                 </div>
                 <div class="row">
-                    <div class="box yellow" id="yellow-box1">1</div>
-                    <div class="box yellow" id="yellow-box2">2</div>
-                    <div class="box yellow" id="yellow-box3">3</div>
-                    <div class="box yellow" id="yellow-box4">4</div>
-                    <div class="box yellow" id="yellow-box5">5</div>
-                    <div class="box"        id="box15">15</div>
+                    <div class="box yellow" id="yellow-box1"></div>
+                    <div class="box yellow" id="yellow-box2"></div>
+                    <div class="box yellow" id="yellow-box3"></div>
+                    <div class="box yellow" id="yellow-box4"></div>
+                    <div class="box yellow" id="yellow-box5"></div>
+                    <div class="box"        id="box15"></div>
                 </div>
                 <div class="row">
-                    <div class="box"        id="box21">21</div>
-                    <div class="box"        id="box20">20</div>
-                    <div class="box"        id="box19">19</div>
-                    <div class="box"        id="box18">18</div>
-                    <div class="box yellow" id="box17">17</div>
-                    <div class="box"        id="box16">16</div>
+                    <div class="box"        id="box21"></div>
+                    <div class="box"        id="box20"></div>
+                    <div class="box"        id="box19"></div>
+                    <div class="box"        id="box18"></div>
+                    <div class="box yellow" id="box17"></div>
+                    <div class="box"        id="box16"></div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="blue-section black-border">
                 <div class="white">
-                    <div class="blue" id="blue-home1"><i class="fa-solid fa-chess-pawn" style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="blue" id="blue-home2"><i class="fa-solid fa-chess-pawn" style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="blue" id="blue-home3"><i class="fa-solid fa-chess-pawn" style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="blue" id="blue-home4"><i class="fa-solid fa-chess-pawn" style="color: blue; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="blue" id="blue-home1"></div>
+                    <div class="blue" id="blue-home2"></div>
+                    <div class="blue" id="blue-home3"></div>
+                    <div class="blue" id="blue-home4"></div>
                 </div>
             </div>
             <div class="lane-section">
                 <div class="row">
-                    <div class="box"      id="box34">34</div>
-                    <div class="box blue" id="blue-box1">1</div>
-                    <div class="box"      id="box22">22</div>
+                    <div class="box"      id="box34"></div>
+                    <div class="box blue" id="blue-box1"></div>
+                    <div class="box"      id="box22"></div>
                 </div>
                 <div class="row">
-                    <div class="box"      id="box33">33</div>
-                    <div class="box blue" id="blue-box2">2</div>
-                    <div class="box"      id="box23">23</div>
+                    <div class="box"      id="box33"></div>
+                    <div class="box blue" id="blue-box2"></div>
+                    <div class="box"      id="box23"></div>
                 </div>
                 <div class="row">
-                    <div class="box"      id="box32">32</div>
-                    <div class="box blue" id="blue-box3">3</div>
-                    <div class="box"      id="box24">24</div>
+                    <div class="box"      id="box32"></div>
+                    <div class="box blue" id="blue-box3"></div>
+                    <div class="box"      id="box24"></div>
                 </div>
                 <div class="row">
-                    <div class="box"      id="box31">31</div>
-                    <div class="box blue" id="blue-box4">4</div>
-                    <div class="box"      id="box25">25</div>
+                    <div class="box"      id="box31"></div>
+                    <div class="box blue" id="blue-box4"></div>
+                    <div class="box"      id="box25"></div>
                 </div>
                 <div class="row">
-                    <div class="box blue" id="box30">30</div>
-                    <div class="box blue" id="blue-box5">5</div>
-                    <div class="box"      id="box26">26</div>
+                    <div class="box blue" id="box30"></div>
+                    <div class="box blue" id="blue-box5"></div>
+                    <div class="box"      id="box26"></div>
                 </div>
                 <div class="row">
-                    <div class="box"      id="box29">29</div>
-                    <div class="box"      id="box28">28</div>
-                    <div class="box"      id="box27">27</div>
+                    <div class="box"      id="box29"></div>
+                    <div class="box"      id="box28"></div>
+                    <div class="box"      id="box27"></div>
                 </div>
             </div>
             <div class="yellow-section black-border">
                 <div class="white">
-                    <div class="yellow" id="yellow-home1"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="yellow" id="yellow-home2"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="yellow" id="yellow-home3"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
-                    <div class="yellow" id="yellow-home4"><i class="fa-solid fa-chess-pawn" style="color: yellow; text-shadow: 0 0 3px #000;"></i></div>
+                    <div class="yellow" id="yellow-home1"></div>
+                    <div class="yellow" id="yellow-home2"></div>
+                    <div class="yellow" id="yellow-home3"></div>
+                    <div class="yellow" id="yellow-home4"></div>
                 </div>
             </div>
         </div>
